@@ -1,0 +1,41 @@
+#form1 .input1{
+    margin: 100px 0px 10px 150px; 
+    border: none;
+    padding-left: 20px; ;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    background-color:#fff ;
+    font-size: 20px;    
+}
+#form1 .input2{    
+    margin: 25px;
+    margin-left: 150px; 
+    border: none;
+    padding-left: 20px; ;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    background-color:#fff ;
+    font-size: 20px;   
+}
+#form1 .select{  
+    border: none;
+    border-radius: 5px;
+    width: 420px;
+    height: 30px;
+    padding-left: 20px; ;
+    font-size: 20px;   
+    margin: 25px;
+    margin-left: 150px; 
+}
+#form1 .button{  
+    border-radius: 5px;
+    border: none;
+    width: 420px;
+    height: 50px;
+    font-size: 20px;   
+    background-color:rgba(60, 241, 181, 0.76) ;
+    margin: 25px;
+    margin-left: 150px; 
+}

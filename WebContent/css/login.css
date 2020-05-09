@@ -1,0 +1,83 @@
+body{
+    background: url("../images/780.jpg")  no-repeat;   
+    background-size: cover;    
+    position: absolute;
+}
+h1{
+    color: cornsilk;
+    position: relative;
+    left: 300px;
+}
+img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.main{
+    font-size: 18px;   
+    position: relative;
+    top:50px;
+    left: 300px;
+    width: 350px;
+    height: 450px; 
+    box-shadow: 2px 5px 20px 2px rgb(255, 254, 254);
+}
+.top{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 350px;
+    background:rgba(0, 0, 0, 0.623);
+    border-radius:10px 10px 0px 0px;     
+}
+.bottom{
+    height: 250px;
+    width: 350px;
+    background-color:rgba(0, 0, 0, 0.623);
+    text-align: center;
+   
+}.sumit{
+    height: 100px;
+}
+form{   
+    color:#fff;
+    font-family:12px;
+}
+input{
+    margin: 20px auto;    
+}
+.inputid,.inputpwd{
+    border: none;
+    width: 200px;
+    height: 30px;  
+    border-radius: 2px;
+    padding-left:40px ;  
+    background:url(../images/mail.png) no-repeat;
+    background-size: 30px 30px;
+    background-color: #fff;
+}
+.inputpwd{
+    background:url(../images/key.png) no-repeat;
+    background-size: 30px 30px;
+    background-color: #fff;
+}
+span{
+    padding-left: 10px; 
+    padding-top: 20px;
+}
+.submit{
+    background:linear-gradient(158deg,#95ca47,#4dc891);
+    width: 280px;
+    height: 40px;  
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 18px;   
+}
+a{
+    text-decoration: none;
+    font-size: 12px;    
+    color: #fff;
+    display: block;    
+}

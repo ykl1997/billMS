@@ -1,0 +1,54 @@
+body{
+    background: url("../images/780.jpg")  no-repeat;   
+    background-size: cover;    
+    position: absolute;
+}
+h1{
+    color: cornsilk;
+    position: relative;
+    left: 300px;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+    float: right;
+    color: #fff;
+    margin-right:20px;
+}
+form{
+    width: 300px;
+    font-size: 18px;   
+    position: relative;
+    background:rgba(0, 0, 0, 0.623);
+    top:80px;
+    left: 300px;
+    width: 350px;
+    height: 400px; 
+    box-shadow: 2px 5px 20px 2px rgb(255, 254, 254);
+    text-align: center;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+input{
+    width: 250px;
+    height: 30px;
+    margin: 20px auto;
+    border: 1px black solid;
+    border-radius: 2px;
+}
+.button{
+    height: 40px;
+    border: none;
+    background:linear-gradient(158deg,#95ca47,#4dc891);
+    color: #fff;
+    font-size: 18px; 
+}
+span{
+    line-height: 10px;
+    display: block;
+    font-size:15px;
+    color: red;
+    margin-left:-140px;
+    padding: -10px 0;
+}
