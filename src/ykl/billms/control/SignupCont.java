@@ -38,7 +38,6 @@ public class SignupCont extends HttpServlet {
 			UserDao.addUesr(user);
 			response.sendRedirect("login.jsp");
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -15,7 +15,7 @@ import ykl.billms.model.PaymentInstallments;
 public class FindOutRecording {
 	public static List<BalanceCalculation> findBC(String date, int userid) {
 		List<BalanceCalculation> lists = new ArrayList<BalanceCalculation>();
-		String sql = "select * from t_balance_calculation where date <'" + date + "' and userId=" + userid;
+		String sql = "select * from t_balance_calculation where date <='" + date + "' and userId=" + userid;
 		try {
 			Statement statement = ConnTool.getCon().createStatement();
 			ResultSet query = statement.executeQuery(sql);
@@ -35,12 +35,11 @@ public class FindOutRecording {
 		} catch (SQLException e) {
 			return null;
 		}
-
 	}
 
 	public static List<Bookkeeping> findBK(String date, int userid) {
 		List<Bookkeeping> lists = new ArrayList<Bookkeeping>();
-		String sql = "select * from t_bookkeeping where date <'" + date + "' and userId=" + userid;
+		String sql = "select * from t_bookkeeping where date <='" + date + "' and userId=" + userid;
 		try {
 			Statement statement = ConnTool.getCon().createStatement();
 			ResultSet query = statement.executeQuery(sql);
@@ -60,7 +59,7 @@ public class FindOutRecording {
 
 	public static List<ManageFinances> findMF(String date, int userid) {
 		List<ManageFinances> lists = new ArrayList<ManageFinances>();
-		String sql = "select * from t_manage_finances where date <'" + date + "' and userId=" + userid;
+		String sql = "select * from t_manage_finances where date <='" + date + "' and userId=" + userid;
 		try {
 			Statement statement = ConnTool.getCon().createStatement();
 			ResultSet query = statement.executeQuery(sql);
@@ -76,12 +75,11 @@ public class FindOutRecording {
 		} catch (SQLException e) {
 			return null;
 		}
-
 	}
 
 	public static List<PaymentInstallments> findPI(String date, int userid) {
 		List<PaymentInstallments> lists = new ArrayList<PaymentInstallments>();
-		String sql = "select * from t_payment_installments where date <'" + date + "' and userId=" + userid;
+		String sql = "select * from t_payment_installments where date <='" + date + "' and userId=" + userid;
 
 		try {
 			Statement statement = ConnTool.getCon().createStatement();
@@ -108,7 +106,7 @@ public class FindOutRecording {
 			for (BalanceCalculation balanceCalculation : findBC) {
 				resultString += "  基础现金：" + balanceCalculation.getBalance() + "  收入：" + balanceCalculation.getIncome()
 						+ "  房租：" + balanceCalculation.getRent() + "  水电：" + balanceCalculation.getHydropower()
-						+ "  伙食：" + balanceCalculation.getEating() + "  请客：" + balanceCalculation.getDinner() + "  ktv"
+						+ "  伙食：" + balanceCalculation.getEating() + "  请客：" + balanceCalculation.getDinner() + "  ktv："
 						+ balanceCalculation.getKtv() + "  结余：" + balanceCalculation.getBalance() + "  日期"
 						+ balanceCalculation.getDate() + "<br>";
 			}
@@ -141,7 +139,9 @@ public class FindOutRecording {
 						+ "<br>";
 			}
 		}
-
+		if (resultString.length() <= 0) {
+			resultString += "您在当前日期之前还没有消费记录！<br>";
+		}
 		resultString += "  <a href=\"index.jsp\"><h4 style=\"font-size:18px;\">返回</h4></a>";
 		return resultString;
 

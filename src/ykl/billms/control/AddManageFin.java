@@ -16,7 +16,7 @@ import ykl.billms.model.ManageFinances;
  */
 @WebServlet("/AddManageFin")
 public class AddManageFin extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -3674437819452726477L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -38,5 +38,4 @@ public class AddManageFin extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

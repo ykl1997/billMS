@@ -19,3 +19,11 @@ for (let i = 0; i < navlist.length; i++) {
     }
 }
 
+function getTime() {
+	let date=new Date();
+	let time=date.toLocaleString();
+	$("#time").html("当前日期： "+time);	
+}
+setInterval("getTime()",1000);
+
+

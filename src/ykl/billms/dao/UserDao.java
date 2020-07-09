@@ -1,10 +1,12 @@
 package ykl.billms.dao;
 
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Base64;
 
 import ykl.billms.DBtool.ConnTool;
 import ykl.billms.model.User;
@@ -31,9 +33,12 @@ public class UserDao {
 		try {
 			PreparedStatement prepareSt = con.prepareStatement(sql);
 			prepareSt.setString(1, user.getUsername());
-			prepareSt.setString(2, user.getPassword());
+			MessageDigest md5 = MessageDigest.getInstance("md5");
+			byte[] digest = md5.digest(user.getPassword().getBytes("utf-8"));
+			String encode = Base64.getEncoder().encodeToString(digest);
+			prepareSt.setString(2, encode);
 			prepareSt.execute();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 

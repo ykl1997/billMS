@@ -34,7 +34,6 @@ public class AddPayInstall extends HttpServlet {
 				Integer.parseInt(request.getSession().getAttribute("userid").toString()));
 		request.getSession().setAttribute("opt", "ok");
 		response.sendRedirect("index.jsp");
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

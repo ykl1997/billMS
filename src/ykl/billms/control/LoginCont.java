@@ -1,7 +1,10 @@
 package ykl.billms.control;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.Base64;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +28,10 @@ public class LoginCont extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		try {
 			User user = UserDao.checkPassword(request.getParameter("username"));
-			if (user.getPassword().equals(request.getParameter("password"))) {
+			MessageDigest md5 = MessageDigest.getInstance("md5");
+			byte[] digest = md5.digest(request.getParameter("password").getBytes("utf-8"));
+			String encodePassword = Base64.getEncoder().encodeToString(digest);
+			if (user.getPassword().equals(encodePassword)) {
 				request.getSession().setAttribute("loginstate", "logined");
 				request.getSession().setAttribute("userid", user.getId());
 				response.sendRedirect("index.jsp");
@@ -33,17 +39,15 @@ public class LoginCont extends HttpServlet {
 				request.setAttribute("msg", "账号或密码错误");
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | NoSuchAlgorithmException e) {
 			request.setAttribute("msg", "账号或密码错误");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			e.printStackTrace();
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

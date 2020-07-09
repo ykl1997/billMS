@@ -10,6 +10,7 @@ public class BalanceCalculation {
 	private double dinner;
 	private double balance;
 	private String date;
+	private double ktv;
 
 	public String getDate() {
 		return date;
@@ -35,8 +36,6 @@ public class BalanceCalculation {
 	public void setEating(double eating) {
 		this.eating = eating;
 	}
-
-	private double ktv;
 
 	public Integer getId() {
 		return id;

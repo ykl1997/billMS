@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%
 		if(request.getSession().getAttribute("loginstate")!="logined")
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("login.jsp");//判断有没有登录
 	%>
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="./css/form3.css">
     <link rel="stylesheet" href="./css/form4.css">
     <link rel="stylesheet" href="./css/form5.css">
+    <script type="text/javascript" src="./js/jquery-1.11.3.js" ></script>
 </head>
 <body>
+  <div id="logout"><a href="LogoutCont"  >退出</a></div>
+  <div id="time"></div>
  <div class="nav-left">
         <div class="wacai">
             <img src="./images/renminbi.png" alt="">
@@ -28,10 +31,10 @@
                 <li> <img src="./images/money.png" alt=""> <span>余额记录</span></li>
                 <li> <img src="./images/changyonglogo30.png" alt=""><span> 分期支付</span></li>
                 <li> <img src="./images/jizhangben.png" alt=""> <span>记账</span></li>
-                <li> <img src="./images/finance.png" alt=""> <span>筛选账单</span></li>
-            </ul>
-        </div>
-    </div>
+                <li> <img src="./images/finance.png" alt=""> <span>筛选账单</span></li>                
+            </ul>    
+	   </div>
+</div>
     <div class="nav-right">
         <div class="include">
             <div id="use">
@@ -112,7 +115,7 @@
         </div>
     </div>
 </body>
-<script src="./js/index.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 <script type="text/javascript">
 var opt='<%= request.getSession().getAttribute("opt") %>';
 if(opt==="ok"){

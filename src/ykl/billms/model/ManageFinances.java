@@ -5,6 +5,7 @@ public class ManageFinances {
 	private double money;
 	private String type;
 	private String date;
+	private int days;
 
 	public String getDate() {
 		return date;
@@ -46,5 +47,4 @@ public class ManageFinances {
 		this.days = days;
 	}
 
-	private int days;
 }
